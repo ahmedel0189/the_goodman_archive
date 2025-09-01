@@ -17,14 +17,18 @@ class _CharacterScreenState
     extends State<CharacterScreen> {
   late List<CharacterModel> allcharacters;
 
+  Future reciveallCharacters() async{
+    allcharacters =await
+        BlocProvider.of<CharactersCubit>(
+          context,
+        ).reciveallCharacters();
+  }
+
   @override
   void initState() {
     super.initState();
     // Load characters when the screen initializes
-    allcharacters=
-    BlocProvider.of<CharactersCubit>(
-      context,
-    ).reciveallCharacters();
+    reciveallCharacters();
   }
 
   Widget buildBlocWidget() {
