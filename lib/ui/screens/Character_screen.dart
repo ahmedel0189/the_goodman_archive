@@ -20,10 +20,11 @@ class _CharacterScreenState
   @override
   void initState() {
     super.initState();
-    allcharacters =
-        BlocProvider.of<CharactersCubit>(
-          context,
-        ).reciveallCharacters();
+    // Load characters when the screen initializes
+    allcharacters=
+    BlocProvider.of<CharactersCubit>(
+      context,
+    ).reciveallCharacters();
   }
 
   Widget buildBlocWidget() {
@@ -33,22 +34,22 @@ class _CharacterScreenState
     >(
       builder: (context, state) {
         if (state is CharactersLoaded) {
-          allcharacters = (state).characters;
-          return buildLoadedwidget();
+          allcharacters = state.characters;
+          return buildLoadedWidget();
         } else {
-          return showlodingIndecator();
+          return showLoadingIndicator();
         }
       },
     );
   }
 
-  Widget showlodingIndecator() {
+  Widget showLoadingIndicator() {
     return Center(
       child: CircularProgressIndicator(),
     );
   }
 
-  Widget buildLoadedwidget() {
+  Widget buildLoadedWidget() {
     return SingleChildScrollView(
       child: Container(
         color: MyColors.myGrey,
@@ -67,11 +68,14 @@ class _CharacterScreenState
             childAspectRatio: 2 / 3,
             crossAxisSpacing: 1,
           ),
-          shrinkWrap: true,
-          physics: const ClampingScrollPhysics(),
-          padding: EdgeInsets.zero,
+      shrinkWrap: true,
+      physics: const ClampingScrollPhysics(),
+      padding: EdgeInsets.zero,
+      itemCount: allcharacters.length,
       itemBuilder: (context, index) {
-        return CharacterCard();
+        return CharacterCard(
+          characterModel: allcharacters[index],
+        );
       },
     );
   }
