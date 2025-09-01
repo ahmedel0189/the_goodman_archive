@@ -5,7 +5,7 @@ import '../constants/string.dart';
 import '../data/api/characters_api.dart';
 import '../data/repositories/characters_repositories.dart';
 import '../logic/cubit/characters_cubit.dart';
-import '../ui/screens/Character_screen.dart';
+import '../ui/screens/character_screen.dart';
 import '../ui/screens/character_details.dart';
 
 class AppRouter {
