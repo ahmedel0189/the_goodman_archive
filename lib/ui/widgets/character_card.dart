@@ -30,7 +30,7 @@ class CharacterCard extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: 15,vertical: 10),
           color: Colors.black54,
           alignment: Alignment.bottomCenter,
-          child:Text(characterModel.actorName,style: 
+          child:Text(characterModel.fullName,style: 
           TextStyle(color:MyColors.myWhite,
           height: 1.3,
           fontSize: 16),
@@ -44,7 +44,7 @@ class CharacterCard extends StatelessWidget {
                   height: double.infinity,
                   placeholder:
                       'assets/images/loading.gif',
-                  image: characterModel.image,
+                  image: characterModel.imageUrl,
                   fit: BoxFit.cover,
                 )
               : Image.asset(

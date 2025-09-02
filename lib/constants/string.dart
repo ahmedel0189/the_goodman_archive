@@ -1,5 +1,5 @@
 final baseUrl =
-    'https://www.breakingbadapi.com/api//api/';
+    'https://thronesapi.com/api/v2/';
 const charactersScreen = '/';
 const characterDetailsScreen =
     '/character_details';

@@ -1,67 +1,87 @@
+// class CharacterModel {
+//   late final int charId;
+//   late final String name;
+//   late final String birthday;
+//   late final List<String> occupation;
+//   late final String image;
+//   late final List<int> appearance;
+//   late final String nickname;
+//   late final String actorName;
+//   late final String appearedIn;
+//   late final List<int> betterCallSaulAppearance;
+//   late final String status;
+
+//   CharacterModel({
+//     required this.charId,
+//     required this.name,
+//     required this.birthday,
+//     required this.occupation,
+//     required this.image,
+//     required this.appearance,
+//     required this.nickname,
+//     required this.actorName,
+//     required this.appearedIn,
+//     required this.betterCallSaulAppearance,
+//     required this.status,
+//   });
+
+//   factory CharacterModel.fromjson(
+//     Map<String, dynamic> json,
+//   ) {
+//     return CharacterModel(
+//       charId: json['char_id'],
+//       name: json['name'],
+//       birthday: json['birthday'],
+//       occupation: List<String>.from(
+//         json['occupation'],
+//       ),
+//       image: json['img'],
+//       appearance: List<int>.from(
+//         json['appearance'],
+//       ),
+//       nickname: json['nickname'],
+//       actorName: json['portrayed'],
+//       appearedIn: json['category'],
+//       betterCallSaulAppearance: List<int>.from(
+//         json['better_call_saul_appearance'],
+//       ),
+//       status: json['status'],
+//     );
+//   }
+// }
+
 class CharacterModel {
-  final int charId;
-  final String name;
-  final String birthday;
-  final List<String> occupation;
+  final int id;
+  final String firstName;
+  final String lastName;
+  final String fullName;
+  final String title;
+  final String family;
   final String image;
-  final List<int> appearance;
-  final String nickname;
-  final String actorName;
-  final String appearedIn;
-  final List<int> betterCallSaulAppearance;
-  final String status;
+  final String imageUrl;
 
   CharacterModel({
-    required this.charId,
-    required this.name,
-    required this.birthday,
-    required this.occupation,
+    required this.id,
+    required this.firstName,
+    required this.lastName,
+    required this.fullName,
+    required this.title,
+    required this.family,
     required this.image,
-    required this.appearance,
-    required this.nickname,
-    required this.actorName,
-    required this.appearedIn,
-    required this.betterCallSaulAppearance,
-    required this.status,
+    required this.imageUrl,
   });
 
-  factory CharacterModel.fromjson(Map<String, dynamic> json) {
+  /// Factory constructor from JSON
+  factory CharacterModel.fromJson(Map<String, dynamic> json) {
     return CharacterModel(
-      charId: json['char_id'],
-      name: json['name'],
-      birthday: json['birthday'],
-      occupation: List<String>.from(json['occupation']),
-      image: json['img'],
-      appearance: List<int>.from(json['appearance']),
-      nickname: json['nickname'],
-      actorName: json['portrayed'],
-      appearedIn: json['category'],
-      betterCallSaulAppearance: List<int>.from(json['better_call_saul_appearance']),
-      status: json['status'],
+      id: json['id'] ?? 0,
+      firstName: json['firstName'] ,
+      lastName: json['lastName'] ,
+      fullName: json['fullName'] ,
+      title: json['title'] ,
+      family: json['family'] ,
+      image: json['image'] ,
+      imageUrl: json['imageUrl'] ,
     );
   }
 }
-
-
-    // {
-    //     "char_id": 1,
-    //     "name": "Walter White",
-    //     "birthday": "09-07-1958",
-    //     "occupation": [
-    //         "High School Chemistry Teacher",
-    //         "Meth King Pin"
-    //     ],
-    //     "img": "amc.com/wp-content/uploads/2015/04/cast_bb_700x1000_walter-white-lg.jpg",
-    //     "status": "Deceased",
-    //     "appearance": [
-    //         1,
-    //         2,
-    //         3,
-    //         4,
-    //         5
-    //     ],
-    //     "nickname": "Heisenberg",
-    //     "portrayed": "Bryan Cranston",
-    //     "category": "Breaking Bad",
-    //     "better_call_saul_appearance": []
-    // },

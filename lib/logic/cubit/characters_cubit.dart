@@ -13,8 +13,8 @@ class CharactersCubit
   CharactersCubit(this.charactersRepository)
     : super(CharactersInitial());
 
-  Future< List<CharacterModel>> reciveallCharacters()async {
-    final characters= await charactersRepository.getallcharaters().then((
+  List<CharacterModel> reciveallCharacters() {
+    charactersRepository.getallcharaters().then((
       characters,
     ) {
       emit(

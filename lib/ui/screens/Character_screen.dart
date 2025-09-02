@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:the_goodman_archive/constants/my_colors.dart';
-import 'package:the_goodman_archive/data/models/character_model.dart';
 import 'package:the_goodman_archive/logic/cubit/characters_cubit.dart';
 import 'package:the_goodman_archive/ui/widgets/character_card.dart';
 
@@ -15,20 +14,16 @@ class CharacterScreen extends StatefulWidget {
 
 class _CharacterScreenState
     extends State<CharacterScreen> {
-  late List<CharacterModel> allcharacters;
-
-  Future reciveallCharacters() async{
-    allcharacters =await
-        BlocProvider.of<CharactersCubit>(
-          context,
-        ).reciveallCharacters();
-  }
+  List<dynamic> allcharacters = [];
 
   @override
   void initState() {
     super.initState();
     // Load characters when the screen initializes
-    reciveallCharacters();
+    allcharacters =
+        BlocProvider.of<CharactersCubit>(
+          context,
+        ).reciveallCharacters();
   }
 
   Widget buildBlocWidget() {

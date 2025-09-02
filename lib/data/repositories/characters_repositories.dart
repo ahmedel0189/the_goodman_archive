@@ -17,7 +17,7 @@ class CharactersRepositories {
     // Iterable of maps of character model
         .map(
           (character) =>
-              CharacterModel.fromjson(character),
+              CharacterModel.fromJson(character),
         )
         .toList();
   }
