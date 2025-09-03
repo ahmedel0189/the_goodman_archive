@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:the_goodman_archive/constants/my_colors.dart';
+
+import '../../constants/my_colors.dart';
 import '../../data/models/character_model.dart';
 import '../../logic/cubit/characters_cubit.dart';
 import '../widgets/appbar_to_search.dart';
