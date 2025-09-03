@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:the_goodman_archive/constants/my_colors.dart';
-import 'package:the_goodman_archive/data/models/character_model.dart';
+import '../../constants/my_colors.dart';
+import '../../data/models/character_model.dart';
 
 class CharacterCard extends StatelessWidget {
   final CharacterModel characterModel;
@@ -27,18 +27,26 @@ class CharacterCard extends StatelessWidget {
       child: GridTile(
         footer: Container(
           width: double.infinity,
-          padding: EdgeInsets.symmetric(horizontal: 15,vertical: 10),
+          padding: EdgeInsets.symmetric(
+            horizontal: 15,
+            vertical: 10,
+          ),
           color: Colors.black54,
           alignment: Alignment.bottomCenter,
-          child:Text(characterModel.fullName,style: 
-          TextStyle(color:MyColors.myWhite,
-          height: 1.3,
-          fontSize: 16),
-          overflow:  TextOverflow.ellipsis,maxLines: 2,
-          textAlign: TextAlign.center,)
+          child: Text(
+            characterModel.fullName,
+            style: TextStyle(
+              color: MyColors.myWhite,
+              height: 1.3,
+              fontSize: 16,
+            ),
+            overflow: TextOverflow.ellipsis,
+            maxLines: 2,
+            textAlign: TextAlign.center,
+          ),
         ),
         child: Container(
-          child: characterModel.image.isNotEmpty
+          child: characterModel.imageUrl.isNotEmpty
               ? FadeInImage.assetNetwork(
                   width: double.infinity,
                   height: double.infinity,

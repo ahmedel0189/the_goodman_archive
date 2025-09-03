@@ -1,6 +1,6 @@
 import 'package:bloc/bloc.dart';
-import 'package:the_goodman_archive/data/models/character_model.dart';
-import 'package:the_goodman_archive/data/repositories/characters_repositories.dart';
+import '../../data/models/character_model.dart';
+import '../../data/repositories/characters_repositories.dart';
 
 part 'characters_state.dart';
 
