@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:the_goodman_archive/data/models/character_model.dart';
 
 import '../constants/string.dart';
 import '../data/api/characters_api.dart';
@@ -30,12 +31,18 @@ class AppRouter {
           builder: (_) => BlocProvider(
             create: (BuildContext context) =>
                 charactersCubit,
-                child: CharacterScreen(),
+            child: CharacterScreen(),
           ),
         );
       case characterDetailsScreen:
+        // when i click on a character to detils screen it pass the selectedCharacter ,
+        // It's own character model to build the character screen according to it
+        final selectedCharacter =
+            settings.arguments as CharacterModel;
         return MaterialPageRoute(
-          builder: (_) => CharacterDetails(),
+          builder: (_) => CharacterDetails(
+            selectedCharacter: selectedCharacter,
+          ),
         );
     }
   }
