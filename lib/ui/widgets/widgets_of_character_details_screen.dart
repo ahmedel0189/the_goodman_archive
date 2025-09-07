@@ -1,8 +1,8 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:the_goodman_archive/constants/my_colors.dart';
-import 'package:the_goodman_archive/data/models/character_model.dart';
+import '../../constants/my_colors.dart';
+import '../../data/models/character_model.dart';
 
 class WidgetsOfCharacterDetailsScreen {
   Future<Size> getImageSize(String url) async {

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:the_goodman_archive/constants/my_colors.dart';
-import 'package:the_goodman_archive/data/models/character_model.dart';
-import 'package:the_goodman_archive/ui/widgets/widgets_of_character_details_screen.dart';
+import '../../constants/my_colors.dart';
+import '../../data/models/character_model.dart';
+import '../widgets/widgets_of_character_details_screen.dart';
 
 class CharacterDetails extends StatelessWidget {
   final CharacterModel selectedCharacter;

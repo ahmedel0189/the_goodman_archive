@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:the_goodman_archive/constants/string.dart';
+
 import '../../constants/my_colors.dart';
+import '../../constants/string.dart';
 import '../../data/models/character_model.dart';
 
 class CharacterCard extends StatelessWidget {

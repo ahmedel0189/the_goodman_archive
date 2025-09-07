@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:the_goodman_archive/data/models/character_model.dart';
+import '../data/models/character_model.dart';
 
 import '../constants/string.dart';
 import '../data/api/characters_api.dart';
