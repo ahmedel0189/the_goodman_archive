@@ -28,11 +28,7 @@ class _CharacterScreenState
       context,
     ).reciveallCharacters();
   }
-  void updateSearchedCharacters(List<CharacterModel> characters) {
-    setState(() {
-      searchedForCharacter = characters;
-    });
-  }
+
   // ? build character screen
   Widget buildBlocWidget() {
     return BlocBuilder<
@@ -42,12 +38,11 @@ class _CharacterScreenState
       builder: (context, state) {
         if (state is CharactersLoaded) {
           allcharacters = state.characters;
-
           // لو مفيش بحث، اعرض الكل
-          final charactersToShow = searchedForCharacter.isEmpty
+          final charactersToShow =
+              searchedForCharacter.isEmpty
               ? allcharacters
               : searchedForCharacter;
-
           return WidgetsOfCharacterScreen(
             charactersToShow,
           ).buildLoadedWidget();
@@ -59,6 +54,13 @@ class _CharacterScreenState
     );
   }
 
+  void updateSearchedCharacters(
+    List<CharacterModel> characters,
+  ) {
+    setState(() {
+      searchedForCharacter = characters;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -66,7 +68,7 @@ class _CharacterScreenState
       backgroundColor: MyColors.myGrey,
       appBar: AppbarToSearch(
         allcharacters: allcharacters,
-      onSearch: updateSearchedCharacters, // 👈
+        onSearch: updateSearchedCharacters, // 👈
       ),
       body: buildBlocWidget(),
     );

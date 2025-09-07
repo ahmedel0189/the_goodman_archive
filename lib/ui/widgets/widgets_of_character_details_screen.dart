@@ -5,8 +5,6 @@ import 'package:the_goodman_archive/constants/my_colors.dart';
 import 'package:the_goodman_archive/data/models/character_model.dart';
 
 class WidgetsOfCharacterDetailsScreen {
-  
-
   Future<Size> getImageSize(String url) async {
     final completer = Completer<Size>();
     final image = Image.network(url);
@@ -25,7 +23,10 @@ class WidgetsOfCharacterDetailsScreen {
     return completer.future;
   }
 
-  Widget buildSliverAppbar(BuildContext context ,CharacterModel selectedCharacter) {
+  Widget buildSliverAppbar(
+    BuildContext context,
+    CharacterModel selectedCharacter,
+  ) {
     return FutureBuilder<Size>(
       future: getImageSize(
         selectedCharacter.imageUrl,
@@ -44,6 +45,10 @@ class WidgetsOfCharacterDetailsScreen {
               (size.height / size.width);
         }
         return SliverAppBar(
+          iconTheme: IconThemeData(
+            size: 35,
+            color: MyColors.myWhite,
+          ),
           expandedHeight: expandedHeight,
           pinned: true,
           stretch: true,
@@ -67,8 +72,49 @@ class WidgetsOfCharacterDetailsScreen {
               ),
             ),
           ),
+          
         );
       },
+    );
+  }
+
+  Widget characterIfo(
+    String title,
+    String value,
+  ) {
+    return RichText(
+      textDirection: TextDirection.ltr,
+      textAlign: TextAlign.start,
+      maxLines: 2,
+      overflow: TextOverflow.ellipsis,
+      text: TextSpan(
+        children: [
+          TextSpan(
+            text: title,
+            style: TextStyle(
+              color: MyColors.myWhite,
+              fontWeight: FontWeight.bold,
+              fontSize: 18,
+            ),
+          ),
+          TextSpan(
+            text: value,
+            style: TextStyle(
+              color: MyColors.myWhite,
+              fontSize: 16,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget buildDivider(double endIndent) {
+    return Divider(
+      height: 30,
+      endIndent: endIndent,
+      color: MyColors.myYellow,
+      thickness: 2,
     );
   }
 }
