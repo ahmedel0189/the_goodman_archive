@@ -54,4 +54,29 @@ class WidgetsOfCharacterScreen {
       },
     );
   }
+
+  Widget buildNoInternetWidget() {
+    return Center(
+      child: Container(
+        color: Colors.white,
+        child: Column(
+          mainAxisAlignment:
+              MainAxisAlignment.center,
+          children: [
+            SizedBox(height: 20),
+            Text(
+              'Can\'t connect .. check internet',
+              style: TextStyle(
+                fontSize: 22,
+                color: MyColors.myGrey,
+              ),
+            ),
+            Image.asset(
+              'assets/images/no_internet.png',
+            ),
+          ],
+        ),
+      ),
+    );
+  }
 }
